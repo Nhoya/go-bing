@@ -3,6 +3,8 @@ Golang Library for bing  search API v7
 
 Before getting started with this lib you need to get a [Bing Search Token](https://azure.microsoft.com/it-it/try/cognitive-services/my-api)
 
+`go-bin` is written with simplicity in mind
+
 # Installation
 `go get -v github.com/Nhoya/go-bing`
 
@@ -15,12 +17,6 @@ import (
         "fmt"
         "github.com/Nhoya/go-bing"
 )
-
-func panicOnErr(err error) {
-        if err != nil {
-                panic(err)
-        }
-}
 
 func main() {
         //Create new Client instance

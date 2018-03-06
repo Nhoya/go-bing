@@ -5,12 +5,6 @@ import (
 	"github.com/Nhoya/go-bing"
 )
 
-func panicOnErr(err error) {
-	if err != nil {
-		panic(err)
-	}
-}
-
 func main() {
 	//Create new Client instance
 	client := bing.NewClient("INSERT TOKEN HERE")
