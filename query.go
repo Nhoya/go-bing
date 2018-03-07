@@ -42,15 +42,14 @@ func (query *Query) buildRequest() (*http.Request, error) {
 	if err != nil {
 		return req, err
 	}
-	req = setDefaultRequestParam(req, query)
+	query.setDefaultRequestParam(req)
 	return req, nil
 }
 
-func setDefaultRequestParam(req *http.Request, query *Query) *http.Request {
+func (query *Query) setDefaultRequestParam(req *http.Request) {
 	//Set GET parameters
 	k := req.URL.Query()
 	k.Add("q", query.Q)
 	k.Add("safeSearch", query.SafeSearch)
 	req.URL.RawQuery = k.Encode()
-	return req
 }
