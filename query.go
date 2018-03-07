@@ -46,7 +46,7 @@ func (query *Query) buildRequest() (*http.Request, error) {
 	return req, nil
 }
 
-func setDefaultRequestParam(req *http.Request, query *Query) *http.Request {
+func (query *Query) setDefaultRequestParam(req *http.Request) *http.Request {
 	//Set GET parameters
 	k := req.URL.Query()
 	k.Add("q", query.Q)
