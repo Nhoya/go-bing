@@ -42,7 +42,7 @@ func (query *Query) buildRequest() (*http.Request, error) {
 	if err != nil {
 		return req, err
 	}
-	req.setDefaultRequestParam(query)
+	query.setDefaultRequestParam(query)
 	return req, nil
 }
 
