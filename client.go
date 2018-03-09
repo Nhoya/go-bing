@@ -26,12 +26,8 @@ func (c *Client) Search(search string) (*BingAnswer, error) {
 		return nil, fmt.Errorf("Query lenght must be < 1500 characters")
 	}
 	query := NewQuery(search)
-	req, err := http.NewRequest("GET", "https://api.cognitive.microsoft.com/bing/v7.0/search", nil)
-	if err != nil {
-		return nil, err
-	}
 	//Build the request
-	req, err = query.buildRequest()
+	req, err := query.buildRequest()
 	if err != nil {
 		return nil, err
 	}
